@@ -185,8 +185,8 @@ void LCD_Clear(uint16_t color)
 void LCD_Fill(uint16_t xstart, uint16_t ystart, uint16_t xend, uint16_t yend, uint16_t color)
 {
 	uint32_t num;
-	LCD_ROW_SET(xstart,xend);
-	LCD_COL_SET(ystart,yend);
+	LCD_COL_SET(xstart,xend);
+	LCD_ROW_SET(ystart,yend);
 	num = (uint32_t)((xend-xstart+1)*(yend-ystart+1));
 	LCD_Write_CMD(0x2C);
 	while(num--)
